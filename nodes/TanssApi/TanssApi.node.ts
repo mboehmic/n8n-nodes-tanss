@@ -695,7 +695,7 @@ export class TanssApi implements INodeType {
 							if (operation === 'login') {
 									const username = credentials.username as string;
 									const password = credentials.password as string;
-									url = `${credentials.baseURL}/api/v1/login`;
+									url = `${credentials.baseURL}/backend/api/v1/login`;
 									requestOptions = {
 											method: 'POST' as IHttpRequestMethods,
 											url,
@@ -708,7 +708,7 @@ export class TanssApi implements INodeType {
 					} else if (category === 'ticketLists') {
 							switch (operation) {
 									case 'getOwnTickets':
-											url = `${credentials.baseURL}/api/v1/tickets/own`;
+											url = `${credentials.baseURL}/backend/api/v1/tickets/own`;
 											requestOptions = {
 													method: 'GET' as IHttpRequestMethods,
 													url,
@@ -717,7 +717,7 @@ export class TanssApi implements INodeType {
 											};
 											break;
 									case 'getGeneralTickets':
-											url = `${credentials.baseURL}/api/v1/tickets/general`;
+											url = `${credentials.baseURL}/backend/api/v1/tickets/general`;
 											requestOptions = {
 													method: 'GET' as IHttpRequestMethods,
 													url,
@@ -727,7 +727,7 @@ export class TanssApi implements INodeType {
 											break;
 									case 'getCompanyTickets':
 											const companyId = this.getNodeParameter('companyId', i) as number;
-											url = `${credentials.baseURL}/api/v1/tickets/company/${companyId}`;
+											url = `${credentials.baseURL}/backend/api/v1/tickets/company/${companyId}`;
 											requestOptions = {
 													method: 'GET' as IHttpRequestMethods,
 													url,
@@ -736,7 +736,7 @@ export class TanssApi implements INodeType {
 											};
 											break;
 									case 'getNotIdentifiedTickets':
-											url = `${credentials.baseURL}/api/v1/tickets/notIdentified`;
+											url = `${credentials.baseURL}/backend/api/v1/tickets/notIdentified`;
 											requestOptions = {
 													method: 'GET' as IHttpRequestMethods,
 													url,
@@ -745,7 +745,7 @@ export class TanssApi implements INodeType {
 											};
 											break;
 									case 'getProjectTickets':
-											url = `${credentials.baseURL}/api/v1/tickets/projects`;
+											url = `${credentials.baseURL}/backend/api/v1/tickets/projects`;
 											requestOptions = {
 													method: 'GET' as IHttpRequestMethods,
 													url,
@@ -754,7 +754,7 @@ export class TanssApi implements INodeType {
 											};
 											break;
 									case 'getTechnicianTickets':
-											url = `${credentials.baseURL}/api/v1/tickets/technician`;
+											url = `${credentials.baseURL}/backend/api/v1/tickets/technician`;
 											requestOptions = {
 													method: 'GET' as IHttpRequestMethods,
 													url,
@@ -769,7 +769,7 @@ export class TanssApi implements INodeType {
 							switch (operation) {
 									case 'getTicketById':
 											const ticketId = this.getNodeParameter('ticketId', i) as number;
-											url = `${credentials.baseURL}/api/v1/tickets/${ticketId}`;
+											url = `${credentials.baseURL}/backend/api/v1/tickets/${ticketId}`;
 											requestOptions = {
 													method: 'GET' as IHttpRequestMethods,
 													url,
@@ -783,7 +783,7 @@ export class TanssApi implements INodeType {
 											const commentContent = this.getNodeParameter('commentContent', i) as string;
 											const internal = this.getNodeParameter('internal', i) as boolean;
 
-											url = `${credentials.baseURL}/api/v1/tickets/${commentTicketId}/comments`;
+											url = `${credentials.baseURL}/backend/api/v1/tickets/${commentTicketId}/comments`;
 											requestOptions = {
 													method: 'POST' as IHttpRequestMethods,
 													url,
@@ -799,7 +799,7 @@ export class TanssApi implements INodeType {
 											break;
 									case 'getTicketHistory':
 											const historyTicketId = this.getNodeParameter('ticketId', i) as number;
-											url = `${credentials.baseURL}/api/v1/tickets/history/${historyTicketId}`;
+											url = `${credentials.baseURL}/backend/api/v1/tickets/history/${historyTicketId}`;
 											requestOptions = {
 													method: 'GET' as IHttpRequestMethods,
 													url,
@@ -810,7 +810,7 @@ export class TanssApi implements INodeType {
 									case 'updateTicket':
 											const updateTicketId = this.getNodeParameter('ticketId', i) as number;
 
-											url = `${credentials.baseURL}/api/v1/tickets/${updateTicketId}`;
+											url = `${credentials.baseURL}/backend/api/v1/tickets/${updateTicketId}`;
 
 											const ticketUpdates: any = {
 													title: this.getNodeParameter('title', i, ''),
